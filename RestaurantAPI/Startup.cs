@@ -1,4 +1,7 @@
-﻿namespace RestaurantAPI
+﻿using Microsoft.EntityFrameworkCore;
+using RestaurantAPI.Data;
+
+namespace RestaurantAPI
 {
     public class Startup
     {
@@ -11,6 +14,11 @@
 
         public void ConfigureServices(IServiceCollection services) 
         {
+            services.AddDbContext<RestaurantDbContext>(options => 
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("RestaurantDb"));
+            });
+
             services.AddControllers();
         }
 
