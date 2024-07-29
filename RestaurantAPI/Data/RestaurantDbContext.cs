@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Entity;
-using System.Data;
 
 namespace RestaurantAPI.Data
 {
@@ -11,9 +10,9 @@ namespace RestaurantAPI.Data
             
         }
 
-        DbSet<Restaurant> Restaurants { get; set; }
-        DbSet<Dish> Dishes { get; set; }
-        DbSet<Address> Address { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Dish> Dishes { get; set; }
+        public DbSet<Address> Address { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

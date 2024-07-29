@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Data;
+using RestaurantAPI.Seed;
 
 namespace RestaurantAPI
 {
@@ -14,16 +15,19 @@ namespace RestaurantAPI
 
         public void ConfigureServices(IServiceCollection services) 
         {
-            services.AddDbContext<RestaurantDbContext>(options => 
+            services.AddControllers();
+            
+            services.AddDbContext<RestaurantDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("RestaurantDb"));
             });
-
-            services.AddControllers();
+            services.AddScoped<RestaurantSeeder>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, RestaurantSeeder seeder)
         {
+            seeder.Seed();
+
             if (env.IsDevelopment()) 
             {
                 app.UseDeveloperExceptionPage();
