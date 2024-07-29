@@ -1,10 +1,10 @@
-﻿using RestaurantAPI.Entity;
+﻿using RestaurantAPI.Model;
 
 namespace RestaurantAPI.Interfaces
 {
     public interface IRestaurantRepository
     {
-        IEnumerable<Restaurant> GetAll();
-        Restaurant GetById(int id);
+        IEnumerable<RestaurantDto> GetAll();
+        RestaurantDto GetById(int id);
     }
 }

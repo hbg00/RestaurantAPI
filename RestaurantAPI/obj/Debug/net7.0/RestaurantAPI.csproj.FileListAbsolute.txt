@@ -74,3 +74,5 @@ C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\obj\Debug\net7.0\refint\Resta
 C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\obj\Debug\net7.0\RestaurantAPI.pdb
 C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\obj\Debug\net7.0\RestaurantAPI.genruntimeconfig.cache
 C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\obj\Debug\net7.0\ref\RestaurantAPI.dll
+C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\00hub\Desktop\RestaurantAPI\RestaurantAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

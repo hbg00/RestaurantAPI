@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestaurantAPI.Entity;
 using RestaurantAPI.Interfaces;
+using RestaurantAPI.Model;
 
 namespace RestaurantAPI.Controllers
 {
@@ -15,13 +15,13 @@ namespace RestaurantAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Restaurant>> GetAll()
+        public ActionResult<IEnumerable<RestaurantDto>> GetAll()
         {
             return Ok(_restaurantRepository.GetAll());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Restaurant> GetById([FromRoute] int id) 
+        public ActionResult<RestaurantDto> GetById([FromRoute] int id) 
         {
             var restaurant = _restaurantRepository.GetById(id);
             

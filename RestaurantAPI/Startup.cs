@@ -25,6 +25,8 @@ namespace RestaurantAPI
             });
             services.AddScoped<RestaurantSeeder>();
 
+            services.AddAutoMapper(this.GetType().Assembly);
+
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
         }
 
