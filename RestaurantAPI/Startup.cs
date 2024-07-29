@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Data;
+using RestaurantAPI.Interfaces;
+using RestaurantAPI.Repository;
 using RestaurantAPI.Seed;
 
 namespace RestaurantAPI
@@ -22,6 +24,8 @@ namespace RestaurantAPI
                 options.UseSqlServer(Configuration.GetConnectionString("RestaurantDb"));
             });
             services.AddScoped<RestaurantSeeder>();
+
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, RestaurantSeeder seeder)
